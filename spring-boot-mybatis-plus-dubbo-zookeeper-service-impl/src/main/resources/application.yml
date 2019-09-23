@@ -1,0 +1,32 @@
+
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/students?characterEncoding=utf8
+    username: root
+    password: root
+  dubbo:
+    application:
+      #应用名
+      name: provider-service
+    registry:
+      #zookeeper地址
+      address: zookeeper://localhost
+      #提供注册端口
+      port: 2181
+    protocal:
+      name: dubbo
+      #dubbo服务暴露的端口
+      port: 20880
+      #扫描的包名
+    scan: com.coolsen.service.impl
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      table-underline: false
+  type-aliases-package: com.coolsen.pojo
+  configuration:
+    map-underscore-to-camel-case: false

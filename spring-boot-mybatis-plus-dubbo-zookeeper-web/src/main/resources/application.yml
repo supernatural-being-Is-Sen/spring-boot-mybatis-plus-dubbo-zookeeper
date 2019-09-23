@@ -1,0 +1,11 @@
+
+server:
+  port: 80
+spring:
+  dubbo:
+    application:
+      name: consumer-web
+    registry:
+      address: zookeeper://localhost
+      port: 2181
+    scan: com.coolsen.controller
